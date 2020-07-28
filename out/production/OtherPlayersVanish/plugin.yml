@@ -1,0 +1,11 @@
+name: OtherPlayersVanish
+main: andreiwasfound.otherplayersvanish.Main
+author: AndreiWasFound
+version: 1.0 DEV
+description: Type /vanishotherplayers and make all other players invisible, just for you
+website:
+
+commands:
+  vanishotherplayers:
+    description: Make other players invisible. just for you
+    permission: otherplayersvanish.use
