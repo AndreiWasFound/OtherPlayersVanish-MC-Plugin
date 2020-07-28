@@ -20,12 +20,15 @@ public class Command implements CommandExecutor {
             }
             Player player = (Player) sender;
             if (sender.hasPermission("otherplayersvanish.use")) {
-                plugin.removevanishedplayers(player);
-                sender.sendMessage(ChatColor.RED + "Other players are now visible!");
+                if (plugin.hasvanishedplayers()) {
+                    plugin.removevanishedplayers(player);
+                    sender.sendMessage(ChatColor.RED + "Other players are now visible!");
+                } else if (!(plugin.hasvanishedplayers())) {
+                    plugin.addvanishedplayers(player);
+                    sender.sendMessage(ChatColor.GREEN + "Other players are now vanished!");
+                    return true;
+                }
             }
-            plugin.addvanishedplayers(player);
-            sender.sendMessage(ChatColor.GREEN + "Other players are now vanished!");
-            return true;
         }
         return false;
     }
